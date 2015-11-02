@@ -1,6 +1,6 @@
-package com.RojecService.datautil;
+package com.rojecservice.datautil;
 
-import com.RojecService.dto.Request;
+import com.rojecservice.dto.Request;
 
 public interface DataUtil {
 

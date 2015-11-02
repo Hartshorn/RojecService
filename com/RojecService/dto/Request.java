@@ -1,4 +1,4 @@
-package com.RojecService.dto;
+package com.rojecservice.dto;
 
 import java.util.List;
 import java.util.ArrayList;
@@ -10,6 +10,11 @@ public class Request {
   private List<String> errors = new ArrayList<>();
   private Option option;
 
+  public Request() {}
+
+  public Request(Option option) {
+    this.option = option;
+  }
 
   public Integer getId() {
     return this.id;

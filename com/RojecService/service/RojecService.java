@@ -1,4 +1,6 @@
-package com.RojecService.service;
+package com.rojecservice.service;
+
+import shared.GeneralRequest;
 
 import javax.jws.WebMethod;
 import javax.jws.WebService;
@@ -12,4 +14,7 @@ public interface RojecService {
 
   @WebMethod
   void showAllDataItems();
+
+  @WebMethod
+  void addNewItem(GeneralRequest generalRequest);
 }

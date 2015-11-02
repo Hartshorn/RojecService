@@ -1,4 +1,4 @@
-package com.RojecService.service;
+package com.rojecservice.service;
 
 import javax.xml.ws.Endpoint;
 

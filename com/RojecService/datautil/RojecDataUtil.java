@@ -1,8 +1,8 @@
-package com.RojecService.datautil;
+package com.rojecservice.datautil;
 
-import com.RojecService.database.RojecDatabase;
-import com.RojecService.dto.Request;
-import com.RojecService.dto.Option;
+import com.rojecservice.database.RojecDatabase;
+import com.rojecservice.dto.Request;
+import com.rojecservice.dto.Option;
 
 
 

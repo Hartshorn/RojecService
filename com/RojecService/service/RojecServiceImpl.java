@@ -1,10 +1,16 @@
-package com.RojecService.service;
+package com.rojecservice.service;
 
-import com.RojecService.datautil.RojecDataUtil;
+import com.rojecservice.datautil.RojecDataUtil;
+import com.rojecservice.dto.Request;
+import com.rojecservice.dto.Option;
+import shared.GeneralRequest;
+import com.rojecservice.constants.Constants;
 
 import javax.jws.WebService;
 
-@WebService(endpointInterface="com.RojecService.service.RojecService")
+
+
+@WebService(endpointInterface="com.rojecservice.service.RojecService")
 public class RojecServiceImpl implements RojecService {
 
   private static RojecDataUtil util = new RojecDataUtil();
@@ -14,4 +20,8 @@ public class RojecServiceImpl implements RojecService {
     util.showAllDataItems();
   }
 
+  @Override
+  public void addNewItem(Request request) {
+    util.createDataItem(request);
+  }
 }

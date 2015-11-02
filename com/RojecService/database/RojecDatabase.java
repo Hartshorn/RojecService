@@ -1,8 +1,8 @@
-package com.RojecService.database;
+package com.rojecservice.database;
 
-import com.RojecService.dto.Request;
+import com.rojecservice.dto.Request;
 //option only needed for main (testing)
-import com.RojecService.dto.Option;
+import com.rojecservice.dto.Option;
 
 import java.util.List;
 import java.util.ArrayList;
@@ -29,7 +29,7 @@ public class RojecDatabase {
   private static Status status;
   private static Random rng = new Random();
 
-  private static final String dbf = "com.RojecService.database\\db.txt";
+  private static final String dbf = "com\\RojecService\\database\\db.txt";
   final static Charset ENCODING = StandardCharsets.UTF_8;
 
   public RojecDatabase() {

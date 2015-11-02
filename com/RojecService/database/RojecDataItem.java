@@ -1,4 +1,4 @@
-package com.RojecService.database;
+package com.rojecservice.database;
 
 
 public class RojecDataItem {
