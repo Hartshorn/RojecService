@@ -12,6 +12,7 @@ public class RojecDataUtil implements DataUtil {
 
   @Override
   public Boolean createDataItem(Request request) {
+    db.processRequest(request);
     return true;
   }
 

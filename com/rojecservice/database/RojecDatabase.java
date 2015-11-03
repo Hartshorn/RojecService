@@ -28,8 +28,9 @@ public class RojecDatabase {
   private static List<RojecDataItem> data = new ArrayList<>();
   private static Status status;
   private static Random rng = new Random();
-
-  private static final String dbf = "com\\RojecService\\database\\db.txt";
+  
+  //private static final String dbf = "com\\rojecservice\\database\\db.txt";
+  private static final String dbf = "com/rojecservice/database/db.txt";
   final static Charset ENCODING = StandardCharsets.UTF_8;
 
   public RojecDatabase() {

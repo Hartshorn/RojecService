@@ -3,7 +3,6 @@ package com.rojecservice.service;
 import com.rojecservice.datautil.RojecDataUtil;
 import com.rojecservice.dto.Request;
 import com.rojecservice.dto.Option;
-import shared.GeneralRequest;
 import com.rojecservice.constants.Constants;
 
 import javax.jws.WebService;

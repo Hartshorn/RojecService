@@ -16,7 +16,11 @@ public class Option {
     this.choice = choice;
   }
 
-  public Option(Integer choice, String message, String name, String city, String state) {
+  public Option(Integer choice,
+                String message,
+                String name,
+                String city,
+                String state) {
     this.choice = choice;
     this.message = message;
     this.name = name;
