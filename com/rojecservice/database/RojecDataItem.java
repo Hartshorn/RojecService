@@ -7,6 +7,7 @@ public class RojecDataItem {
   private String name;
   private String city;
   private String state;
+  private boolean active;
 
   public Integer getId() {
     return this.id;
@@ -40,11 +41,20 @@ public class RojecDataItem {
     this.state = state;
   }
 
+  public boolean isActive() {
+    return this.active;
+  }
+
+  public void setActive(boolean active) {
+    this.active = active;
+  }
+
   @Override
   public String toString() {
     return this.id + ","
           + this.name + ","
           + this.city + ","
-          + this.state;
+          + this.state + ","
+          + this.active;
   }
 }

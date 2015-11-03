@@ -1,7 +1,6 @@
 package com.rojecservice.database;
 
 import com.rojecservice.dto.Request;
-//option only needed for main (testing)
 import com.rojecservice.dto.Option;
 
 import java.util.List;
@@ -28,7 +27,7 @@ public class RojecDatabase {
   private static List<RojecDataItem> data = new ArrayList<>();
   private static Status status;
   private static Random rng = new Random();
-  
+
   //private static final String dbf = "com\\rojecservice\\database\\db.txt";
   private static final String dbf = "com/rojecservice/database/db.txt";
   final static Charset ENCODING = StandardCharsets.UTF_8;
@@ -48,13 +47,17 @@ public class RojecDatabase {
     switch (request.getOption().getChoice()) {
 
       case 1:
-        showAllData();
-        break;
-
-      case 2:
         addData(request);
         break;
 
+      case 2:
+        showAllData();
+        break;
+
+      case 4:
+        deleteDataItem(request);
+        break;
+        
       default:
         System.out.println("BAD CHOICE ERROR");
         break;
@@ -92,6 +95,7 @@ public class RojecDatabase {
       item.setName(scanner.next());
       item.setCity(scanner.next());
       item.setState(scanner.next());
+      item.setActive(scanner.nextBoolean());
 
       return data.add(item);
     }
@@ -99,10 +103,14 @@ public class RojecDatabase {
   }
 
   private static boolean showAllData() {
-    data.forEach((rdi) -> System.out.println(rdi.getId()
-                                            + ":\t" + rdi.getName()
-                                            + "\t" + rdi.getCity()
-                                            + "," + rdi.getState()));
+    data.forEach((rdi) -> {
+      if(rdi.isActive()) {
+        System.out.println(rdi.getId()
+                 + ":\t" + rdi.getName()
+                  + "\t" + rdi.getCity()
+                   + "," + rdi.getState()); }
+      }
+    );
     return true;
   }
 
@@ -113,6 +121,7 @@ public class RojecDatabase {
     item.setName(request.getOption().getName());
     item.setCity(request.getOption().getCity());
     item.setState(request.getOption().getState());
+    item.setActive(true);
     data.add(item);
 
     try (BufferedWriter writer = new BufferedWriter(
@@ -123,11 +132,22 @@ public class RojecDatabase {
         writer.newLine();
       }
     } catch (IOException e) {
+      System.out.println(e.toString());
       return false;
     }
 
     return true;
   }
+
+  private static boolean deleteDataItem(Request request) {
+    data.forEach((i) -> {
+      if (i.getId() == request.getOption().getId()) {
+        i.setActive(false);
+      }
+    });
+    return true;
+  }
+
 
   private static Integer generateId() {
     return rng.nextInt(100);

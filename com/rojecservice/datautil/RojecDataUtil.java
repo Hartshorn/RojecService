@@ -12,6 +12,9 @@ public class RojecDataUtil implements DataUtil {
 
   @Override
   public Boolean createDataItem(Request request) {
+
+    //TODO: add logging for this
+    System.out.println(request.getOption().getMessage());
     db.processRequest(request);
     return true;
   }
@@ -28,13 +31,10 @@ public class RojecDataUtil implements DataUtil {
 
   @Override
   public Boolean deleteDataItem(Request request) {
-    return true;
+    return db.processRequest(request);
   }
 
-  public Boolean showAllDataItems() {
-    Request request = new Request();
-    request.setOption(new Option(1));
-
+  public Boolean showAllDataItems(Request request) {
     return db.processRequest(request);
   }
 }

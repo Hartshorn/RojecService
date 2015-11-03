@@ -1,8 +1,10 @@
-13,Yet Another Company,St Paul,MN
-42,Yet Another Company,St Paul,MN
-56,Yet Another Company,St Paul,MN
-16,Jack's shop,Chicago,IL
-8,Jack's shop,Chicago,IL
-32,Jack's shop,Chicago,IL
-8,Jack's shop,Chicago,IL
-21,Jack's shop,Chicago,IL
+63,Jack's shop,Chicago,IL,true
+98,Jack's shop,Chicago,IL,false
+77,Jack's shop,Chicago,IL,true
+60,Jack's shop,Chicago,IL,true
+80,Jack's shop,Chicago,IL,true
+72,Jack's shop,Chicago,IL,true
+86,Jack's shop,Chicago,IL,true
+84,Jack's shop,Chicago,IL,true
+26,Jack's shop,Chicago,IL,true
+67,Jack's shop,Chicago,IL,true

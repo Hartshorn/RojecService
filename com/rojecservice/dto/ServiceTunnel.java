@@ -1,38 +1,24 @@
 package com.rojecservice.dto;
 
 
-public class Option {
+import java.util.List;
+
+
+public class ServiceTunnel implements CommunicationProtocol {
 
   private Integer choice;
-  private Integer id;
   private String message;
   private String name;
   private String city;
   private String state;
+  private Integer id;
+  private List<String> errors;
 
 
-  public Option() {}
 
-  public Option(Integer choice) {
-    this.choice = choice;
-  }
-
-  public Option(Integer choice,
-                Integer id) {
-    this.choice = choice;
-    this.id = id;
-  }
-
-  public Option(Integer choice,
-                String message,
-                String name,
-                String city,
-                String state) {
-    this.choice = choice;
-    this.message = message;
-    this.name = name;
-    this.city = city;
-    this.state = state;
+  @Override
+  public List<String> getErrors() {
+    return this.errors;
   }
 
   public Integer getChoice() {
@@ -74,6 +60,7 @@ public class Option {
   public void setState(String state) {
     this.state = state;
   }
+
   public Integer getId() {
     return this.id;
   }
