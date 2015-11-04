@@ -52,6 +52,15 @@ public class RojecServiceImpl implements RojecService {
                                                    tunnel.getId())));
         break;
 
+
+      // this will test value vs reference passing in the tunnel
+      // if it is reference, then this object should be changed, and on the
+      // client side we can pull the changes - otherwise, a "response" of some
+      // kind is needed.
+      case 5:
+        util.readDataItem(tunnel);
+        break;
+
       default:
         break;
     }

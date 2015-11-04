@@ -1,5 +1,7 @@
 package com.rojecservice.dto;
 
+import com.rojecservice.database.RojecDataItem;
+
 
 public class Option {
 
@@ -9,6 +11,7 @@ public class Option {
   private String name;
   private String city;
   private String state;
+  private RojecDataItem rojecDataItem;
 
 
   public Option() {}
@@ -80,5 +83,13 @@ public class Option {
 
   public void setId(Integer id) {
     this.id = id;
+  }
+
+  public RojecDataItem getRojecDataItem() {
+    return this.rojecDataItem;
+  }
+
+  public void setRojecDataItem(RojecDataItem rdi) {
+    this.rojecDataItem = rdi;
   }
 }

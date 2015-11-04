@@ -2,6 +2,7 @@ package com.rojecservice.database;
 
 import com.rojecservice.dto.Request;
 import com.rojecservice.dto.Option;
+import com.rojecservice.dto.ServiceTunnel;
 
 import java.util.List;
 import java.util.ArrayList;
@@ -42,12 +43,14 @@ public class RojecDatabase {
     }
   }
 
-  public static Boolean processRequest(Request request) {
+  public static Boolean processRequest(ServiceTunnel tunnel) {
 
-    switch (request.getOption().getChoice()) {
+
+
+    switch (tunnel.getChoice()) {
 
       case 1:
-        addData(request);
+        // addData(request);
         break;
 
       case 2:
@@ -55,9 +58,21 @@ public class RojecDatabase {
         break;
 
       case 4:
-        deleteDataItem(request);
+        // deleteDataItem(request);
         break;
-        
+
+      case 5:
+        Request request = new Request(new Option(tunnel.getChoice(),
+                                                 tunnel.getId()));
+
+        RojecDataItem rdi = getDataItem(request);
+        tunnel.setMessage("getDataItem() complete");
+        tunnel.setName(rdi.getName());
+        tunnel.setCity(rdi.getCity());
+        tunnel.setState(rdi.getState());
+
+        break;
+
       default:
         System.out.println("BAD CHOICE ERROR");
         break;
@@ -146,6 +161,21 @@ public class RojecDatabase {
       }
     });
     return true;
+  }
+
+  private static RojecDataItem getDataItem(Request request) {
+    for (RojecDataItem rdi : data) {
+      if(rdi.getId() == request.getOption().getId()) {
+        return rdi;
+      }
+    }
+
+    // data.forEach((i) -> {
+    //   if (i.getId() == request.getOption().getId()) {
+    //     return i;
+    //   }
+    // });
+    return new RojecDataItem();
   }
 
 
